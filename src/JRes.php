@@ -24,6 +24,15 @@ class JRes {
        ], Response::HTTP_OK);
    }
 
+   // 401 Unauthorized
+   public static function Unauthorized(string $msg)
+   {
+      return response()->json([
+         'code_status' => Response::HTTP_UNAUTHORIZED,
+         'status' => $msg
+      ], Response::HTTP_UNAUTHORIZED);
+   }
+
    // 422 Unprocessable Entity JSON Response
    public static function UnprocessableEntity(string $msg)
    {
